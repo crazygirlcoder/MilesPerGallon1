@@ -12,8 +12,9 @@ namespace MilesPerGallon
         {
             var path = "C:/Users/sharmishta/Downloads/Book1.csv";
             var csvRows = System.IO.File.ReadAllLines(path, Encoding.Default).ToArray();
-            Person person = new Person();
-            Dictionary<string, Person> dictionary = new Dictionary<string, Person>();
+            PersonDetails person = new PersonDetails();
+
+            Dictionary<string, List<PersonDetails>> dictionary = new Dictionary<string, List<PersonDetails>>();
 
             foreach (var row in csvRows.Skip(1))
             {
@@ -23,30 +24,36 @@ namespace MilesPerGallon
                 person.MilesDriven = float.Parse(columns[2]);
                 person.Gallons = Convert.ToInt32(columns[3]);
                 person.DateFilled = Convert.ToDateTime(columns[4]);
+                if (!dictionary.Keys.Contains(person.PersonName))
+                    dictionary.Add(person.PersonName, new List<PersonDetails>());
 
-                dictionary.Add(person.PersonName,person);
-                GetRange("jack", DateTime.Now,DateTime.Now);
+                dictionary[person.PersonName].Add(person);
+
+                var rangeMPGs = GetRange("jack", DateTime.Now, DateTime.Now);
 
             }
 
-             CarNameMPG GetRange(string personName, DateTime startDate, DateTime endDate)
+            List<CarNameMPG> GetRange(string personName, DateTime startDate, DateTime endDate)
             {
+                var carNameMPG = new CarNameMPG();
+                List<PersonDetails> persondriving = dictionary[personName];
+                List<CarNameMPG> carRecords = new List<CarNameMPG>();
 
-                CarNameMPG carNameMPG = new CarNameMPG();
-                Person persondriving = dictionary[personName];
-                if(persondriving.DateFilled<endDate && persondriving.DateFilled > startDate)
+                foreach (var entry in persondriving)
                 {
-                    var milesPerGallon = CalculateMilesPerGallon(persondriving.MilesDriven, persondriving.Gallons);
-                    
-                    carNameMPG.CarName = persondriving.CarName;
-                    carNameMPG.MilesPerGallon = milesPerGallon;
-                }
-                               
-                return carNameMPG;
+                    if (entry.DateFilled < endDate && entry.DateFilled > startDate)
+                    {
+                        var milesPerGallon = CalculateMilesPerGallon(entry.MilesDriven, entry.Gallons);
+                        carNameMPG.CarName = entry.CarName;
+                        carNameMPG.MilesPerGallon = milesPerGallon;
+                        carRecords.Add(carNameMPG);
+                    }
 
+                }
+                return carRecords;
             }
 
-             float CalculateMilesPerGallon(float Totalmiles, int Totalgallons)
+            float CalculateMilesPerGallon(float Totalmiles, int Totalgallons)
             {
 
                 var milesPerGallon = Totalmiles / Totalgallons;
@@ -56,6 +63,7 @@ namespace MilesPerGallon
 
 
         }
-            
+
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MilesPerGallon
 {
-    class Person
+    class PersonDetails
     {
         public string PersonName { get; set; }
         public string CarName { get; set; }
