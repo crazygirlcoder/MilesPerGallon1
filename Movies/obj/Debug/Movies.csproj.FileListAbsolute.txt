@@ -1,0 +1,7 @@
+C:\Users\sharmishta\source\repos\MilesPerGallon\Movies\bin\Debug\Movies.exe.config
+C:\Users\sharmishta\source\repos\MilesPerGallon\Movies\bin\Debug\Movies.exe
+C:\Users\sharmishta\source\repos\MilesPerGallon\Movies\bin\Debug\Movies.pdb
+C:\Users\sharmishta\source\repos\MilesPerGallon\Movies\obj\Debug\Movies.csprojResolveAssemblyReference.cache
+C:\Users\sharmishta\source\repos\MilesPerGallon\Movies\obj\Debug\Movies.csproj.CoreCompileInputs.cache
+C:\Users\sharmishta\source\repos\MilesPerGallon\Movies\obj\Debug\Movies.exe
+C:\Users\sharmishta\source\repos\MilesPerGallon\Movies\obj\Debug\Movies.pdb

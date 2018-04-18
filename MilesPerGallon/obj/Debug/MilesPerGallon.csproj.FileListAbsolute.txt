@@ -1,0 +1,7 @@
+C:\Users\sharmishta\source\repos\MilesPerGallon\MilesPerGallon\bin\Debug\MilesPerGallon.exe.config
+C:\Users\sharmishta\source\repos\MilesPerGallon\MilesPerGallon\bin\Debug\MilesPerGallon.exe
+C:\Users\sharmishta\source\repos\MilesPerGallon\MilesPerGallon\bin\Debug\MilesPerGallon.pdb
+C:\Users\sharmishta\source\repos\MilesPerGallon\MilesPerGallon\obj\Debug\MilesPerGallon.csprojResolveAssemblyReference.cache
+C:\Users\sharmishta\source\repos\MilesPerGallon\MilesPerGallon\obj\Debug\MilesPerGallon.csproj.CoreCompileInputs.cache
+C:\Users\sharmishta\source\repos\MilesPerGallon\MilesPerGallon\obj\Debug\MilesPerGallon.exe
+C:\Users\sharmishta\source\repos\MilesPerGallon\MilesPerGallon\obj\Debug\MilesPerGallon.pdb
