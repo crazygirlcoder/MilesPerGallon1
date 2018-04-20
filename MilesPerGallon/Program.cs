@@ -12,12 +12,13 @@ namespace MilesPerGallon
         {
             var path = "C:/Users/sharmishta/Downloads/data1.csv";
             var csvRows = System.IO.File.ReadAllLines(path, Encoding.Default).ToArray();
-            PersonDetails person = new PersonDetails();
+
 
             Dictionary<string, List<PersonDetails>> dictionary = new Dictionary<string, List<PersonDetails>>();
 
             foreach (var row in csvRows.Skip(1))
             {
+                PersonDetails person = new PersonDetails();
                 var columns = row.Split(',');
                 person.PersonName = columns[0];
                 person.CarName = columns[1];
@@ -29,9 +30,8 @@ namespace MilesPerGallon
 
                 dictionary[person.PersonName].Add(person);
 
-                
-
             }
+
             var rangeMPGs = GetRange("jack", Convert.ToDateTime("04/18/2018 12:00:00 AM"), Convert.ToDateTime("04/18/2017 12:00:00 AM"));
             List<CarNameMPG> GetRange(string personName, DateTime startDate, DateTime endDate)
             {
@@ -63,7 +63,6 @@ namespace MilesPerGallon
 
 
         }
-
 
     }
 }

@@ -10,7 +10,7 @@ namespace Movies
     {
         public string MovieName { get; set; }
         public string Genere { get; set; }
-        public DateTime YearReleased { get; set; }
+        public int YearReleased { get; set; }
 
     }
 }
